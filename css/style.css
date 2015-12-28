@@ -1,0 +1,130 @@
+body {
+    font-family: helvetica;
+    background-color: #23527c;
+    margin: 0;
+}
+.clear {
+    clear: both;
+}
+.static {
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #EEE;
+}
+#title {
+    font-weight: bold;
+    color: #A51C30;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#infoSign {
+    cursor: pointer;
+    color: black;
+    vertical-align: middle;
+    margin-left: 15px;
+    font-size: 0.75em;
+    display: none;
+}
+#categoryDropdown {
+    color: white;
+    background-color: rgba(35, 82, 124, 0.9);
+    margin-top: 10px;
+}
+#categoryDropdown:hover {
+    background-color: rgb(35, 82, 124)
+}
+.category {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+}
+.category:hover {
+    background-color: #D9D9D9;
+}
+.dropdown {
+    text-align: center;
+}
+.button,
+.dropdown-menu {
+    margin: 5px auto
+}
+.dropdown-menu {
+    width: 175px;
+    left: 50%;
+    margin-left: -87.5px;
+}
+#hint {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#howToPlay {
+    font-size: 1.1em;
+}
+#game {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 10px;
+    position: relative;
+    background-color: #EEE;
+}
+#category {
+    margin: 0;
+}
+#importantStatus {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+#difficulty {
+    padding: 0;
+    margin: 0;
+}
+#hangman {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 30px auto;
+    display: block;
+    width: 250px;
+}
+#keyboard {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.3em;
+}
+#keyboard div {
+    margin: 15px 0;
+}
+#keyboard span {
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+#keyboard span:hover {
+    background-color: #23527c;
+    color: #EEE;
+}
+.vowel {
+    background-color: #23527c;
+    color: white;
+}
+#word {
+    letter-spacing: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.center {
+    text-align: center;
+}
