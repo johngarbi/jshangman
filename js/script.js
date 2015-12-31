@@ -7,7 +7,7 @@ var sports = ["golf", "boxing", "surfing", "badminton", "wrestling"];
 //Concatenate Arrays into Categorys Array
 var categories = [animals, countries, presidents, sports];
 
-//Define the rest of the variables
+//Declare the rest of the variables
 var char;
 var charIndex;
 var canvas;
@@ -39,7 +39,7 @@ $(".category").click(function() {
 	gameEnded = false;
 
 	//Reset Keyboard
-	$("#keyboard").html('<div><span id="q">q</span><span id="w">w</span><span id="e" class="vowel">e</span><span id="r">r</span><span id="t">t</span><span id="y">y</span><span id="u" class="vowel">u</span><span id="i" class="vowel">i</span><span id="o" class="vowel">o</span><span id="p">p</span></div><div><span id="a" class="vowel">a</span><span id="s">s</span><span id="d">d</span><span id="f">f</span><span id="g">g</span><span id="h">h</span><span id="j">j</span><span id="k">k</span><span id="l">l</span></div><div><span id="z">z</span><span id="x">x</span><span id="c">c</span><span id="v">v</span><span id="b">b</span><span id="n">n</span><span id="m">m</span></div>');
+	$("#keyboard").html('<div><span id="a" class="vowel">a</span><span id="b">b</span><span id="c">c</span><span id="d">d</span><span id="e" class="vowel">e</span><span id="f">f</span><span id="g">g</span><span id="h">h</span><span id="i" class="vowel">i</span><span id="j">j</span><span id="k">k</span><span id="l">l</span><span id="m">m</span></div><div><span id="n">n</span><span id="o" class="vowel">o</span><span id="p">p</span><span id="q">q</span><span id="r">r</span><span id="s">s</span><span id="t">t</span><span id="u" class="vowel">u</span><span id="v">v</span><span id="w">w</span><span id="x">x</span><span id="y">y</span><span id="z">z</span></div>');
 
 	//Get random category
 	id = $(this).attr("id");
@@ -56,9 +56,10 @@ $(".category").click(function() {
 	$("title").html(category + " - Hangman");
 	$("#category").html("<strong>Category:</strong> " + category);
 	$("#word").html(replace(word, show));
-	$("#status").html("");
 	makeHangman(0);
 
+	//Remove description box
+	$(".static").removeClass("static");
 	$("body").off('keypress').on('keypress', function(event) {
 		if (!gameEnded) {
 			var keyCode = (event.which) ? event.which : event.keyCode;
@@ -79,10 +80,13 @@ $(".category").click(function() {
 });
 
 function playHangman(char) {
+	$("#status").html("");
+	$("#" + char).css("background-color", "#23527c").css("color", "#EEE");
 	newWord = replace(word, show + char);
 
 	if (newWord === word) {
 		$("#status").html('<div class="alert alert-success"><strong>You Won!</strong><span class="pull-right">Select a category to play again.</span></div>');
+		$("#keyboard span").css("background-color", "green");
 		gameEnded = true;
 	} else if (newWord == $("#word").html()) {
 		if (show.indexOf(char) > -1) {
@@ -105,6 +109,7 @@ function playHangman(char) {
 				}
 				gameEnded = true;
 				makeHangman(5);
+				$("#keyboard span").css("background-color", "red");
 			} else {
 				$("#status").html('<div class="alert alert-danger center"><strong>Try Again</strong></div>');
 				makeHangman(Math.abs(5 - triesLeft));
@@ -116,7 +121,6 @@ function playHangman(char) {
 	show = show + char;
 	$("#word").html(newWord);
 	$("#triesLeft").html("Tries Left: " + triesLeft);
-	$("#" + char).css("background-color", "#23527c").css("color", "#EEE");
 }
 
 //Define Functions to create hangman
@@ -136,8 +140,6 @@ function drawTopGallow() {
 	context.lineTo(200, 50);
 	context.stroke();
 };
-
-
 
 function drawHead() {
 	context.beginPath();
