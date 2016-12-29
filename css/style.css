@@ -1,6 +1,5 @@
 body{
-	background-color: #474948;
-	font-family: helvetica;
+	background-color: #fff;
 	margin: 0;
 }
 .clear{
@@ -75,6 +74,8 @@ body{
 	padding: 10px;
 	position: relative;
 	color:white;
+	background-color:darkgrey;
+	border-radius:5px;
 }
 #category{
 	margin: 0;
