@@ -73,8 +73,8 @@ body{
 	margin-top: 20px;
 	padding: 10px;
 	position: relative;
-	color:white;
-	background-color:darkgrey;
+	color:black;
+	background-color:#E3E3E3;
 	border-radius:5px;
 }
 #category{
